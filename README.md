@@ -22,7 +22,7 @@ Upon the parchment, a strange sequence of numbers was scrawled:
 
 And beneath it, in an unmistakably hand, a verse:
 
-   “If you’re no stranger to wisdom’ways,"
+   “If you’re no stranger to wisdom’s ways,"
    Take heed this rune from ancient days.
 	It masks the key to hidden truth
 	When danger threatens Middle Earth.
