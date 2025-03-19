@@ -21,7 +21,7 @@ Upon the parchment, a strange sequence of numbers was scrawled:
 2466114226142614246611423261426142466114226142614
 
 And beneath it, in an unmistakably hand, a verse:
-
+```
    “If you’re no stranger to wisdom’s ways,"
    Take heed this rune from ancient days.
 	It masks the key to hidden truth
@@ -32,59 +32,63 @@ And beneath it, in an unmistakably hand, a verse:
 	And you will know what happens next.
 	With wit and wisdom you will know
 	The shortest, safest way to go.”
-
+```
 Gandalf’s brow furrowed as he peered over the parchment.
 
 > **"This message is older than any among the Wise can recall. It is said that it was recorded in the First Age, passed down through the wandering Elves of Lindon and Rivendell, and carried across the lands by those who sought to preserve the lost knowledge of Ingwë, High King of the Eldar."**
 
 He gestured to the remainder of the parchment, covered in strange symbols and unreadable text.
 
+```
 // Ydyjyqbypu dunj cqjhyn veh fqjx husedijhksjyed
 vkdsjyed YdyjyqbypuDunjCqjhyn(cqjhyn, d):
-buj dunj[d][d]
-veh y vhec 0 je d-1:
-veh z vhec 0 je d-1:
-yv cqjhyn[y][z] ? YDV qdt y ? z:
-dunj[y][z] = z
-Ubiu:
-dunj[y][z] = -1
-hujkhd dunj
+   buj dunj[d][d]
+   veh y vhec 0 je d-1:
+      veh z vhec 0 je d-1:
+         yv cqjhyn[y][z] ? YDV qdt y ? z:
+            dunj[y][z] = z
+         Ubiu:
+            dunj[y][z] = -1
+   hujkhd dunj
+
 
 // Dejxqde-Suburhycreh Qbwehyjxc myjx Fqjx Husedijhksjyed
 vkdsjyed DejxqdeSuburhycreh(cqjhyn, d):
-dunj = YdyjyqbypuDunjCqjhyn(cqjhyn, d)
-veh a vhec 0 je d-1:
-veh y vhec 0 je d-1:
-veh z vhec 0 je d-1:
-yv cqjhyn[y][a] + cqjhyn[a][z] < cqjhyn[y][z]:
-cqjhyn[y][z] = cqjhyn[y][a] + cqjhyn[a][z]
-dunj[y][z] = dunj[y][a]
-hujkhd cqjhyn, dunj
+   dunj = YdyjyqbypuDunjCqjhyn(cqjhyn, d)
+   veh a vhec 0 je d-1:
+      veh y vhec 0 je d-1:
+         veh z vhec 0 je d-1:
+            yv cqjhyn[y][a] + cqjhyn[a][z] < cqjhyn[y][z]:
+               cqjhyn[y][z] = cqjhyn[y][a] + cqjhyn[a][z]
+               dunj[y][z] = dunj[y][a]
+   hujkhd cqjhyn, dunj
 
 // Hujhyulu ixehjuij fqjx vhec ijqhj je udt kiydw jxu dunj cqjhyn
 vkdsjyed WujFqjx(dunj, ijqhj, udt):
-yv dunj[ijqhj][udt] == -1:
-hujkhd "De fqjx unyiji"
-fqjx = [ijqhj]
-mxybu ijqhj ? udt:
-ijqhj = dunj[ijqhj][udt]
-fqjx.qffudt(ijqhj)
-hujkhd fqjx
+   yv dunj[ijqhj][udt] == -1:
+      hujkhd "De fqjx unyiji"
+   fqjx = [ijqhj]
+   mxybu ijqhj ? udt:
+      ijqhj = dunj[ijqhj][udt]
+      fqjx.qffudt(ijqhj)
+   hujkhd fqjx
+
 {
-{ 0, 3, 5, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV}, // Jxu Ixyhu
-{ 3, 0, 4, 4, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV}, // Rhuu
-{ 5, 4, 0, YDV, 5, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV}, // Ebt Rhytwu qj Jxqhrqt
-{ YDV, 4, YDV, 0, YDV, 6, 4, YDV, YDV, YDV, YDV, YDV, YDV}, // Hyludtub
-{ YDV, YDV, 5, YDV, 0, YDV, YDV, 7, 9, YDV, YDV, YDV, YDV}, // Yiudwqht/Wqf ev Hexqd
-{ YDV, YDV, YDV, 6, YDV, 0, YDV, YDV, YDV, YDV, YDV, 15, YDV}, // Ebt Veht
-{ YDV, YDV, YDV, 4, YDV, YDV, 0, YDV, YDV, YDV, 6, YDV, YDV}, // Cehyq
-{ YDV, YDV, YDV, YDV, 7, YDV, YDV, 0, YDV, 7, YDV, YDV, YDV}, // Utehqi
-{ YDV, YDV, YDV, YDV, 9, YDV, YDV, YDV, 0, 8, YDV, YDV, YDV}, // Uhusx
-{ YDV, YDV, YDV, YDV, YDV, YDV, YDV, 7, 8, 0, YDV, 1, 3}, // Cydqi Jyhyjx
-{ YDV, YDV, YDV, YDV, YDV, YDV, 6, YDV, YDV, YDV, 0, 7, YDV}, // Bejxbehyqd
-{ YDV, YDV, YDV, YDV, YDV, 15, YDV, YDV, YDV, 1, 7, 0, 2}, // Eiwybyqjx
-{ YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, 3, YDV, 2, 0}, // Cehteh
+   { 0, 3, 5, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV}, // Jxu Ixyhu
+   { 3, 0, 4, 4, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV}, // Rhuu
+   { 5, 4, 0, YDV, 5, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV}, // Ebt Rhytwu qj Jxqhrqt
+   { YDV, 4, YDV, 0, YDV, 6, 4, YDV, YDV, YDV, YDV, YDV, YDV}, // Hyludtub
+   { YDV, YDV, 5, YDV, 0, YDV, YDV, 7, 9, YDV, YDV, YDV, YDV}, // Yiudwqht/Wqf ev Hexqd
+   { YDV, YDV, YDV, 6, YDV, 0, YDV, YDV, YDV, YDV, YDV, 15, YDV}, // Ebt Veht
+   { YDV, YDV, YDV, 4, YDV, YDV, 0, YDV, YDV, YDV, 6, YDV, YDV}, // Cehyq
+   { YDV, YDV, YDV, YDV, 7, YDV, YDV, 0, YDV, 7, YDV, YDV, YDV}, // Utehqi
+   { YDV, YDV, YDV, YDV, 9, YDV, YDV, YDV, 0, 8, YDV, YDV, YDV}, // Uhusx
+   { YDV, YDV, YDV, YDV, YDV, YDV, YDV, 7, 8, 0, YDV, 1, 3}, // Cydqi Jyhyjx
+   { YDV, YDV, YDV, YDV, YDV, YDV, 6, YDV, YDV, YDV, 0, 7, YDV}, // Bejxbehyqd
+   { YDV, YDV, YDV, YDV, YDV, 15, YDV, YDV, YDV, 1, 7, 0, 2}, // Eiwybyqjx
+   { YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, YDV, 3, YDV, 2, 0}, // Cehteh
 }
+```
 
 "The wisdom of the past is here, but it is shrouded. If you can decipher the meaning of these numbers, if you can unlock this riddle, then the path to Mordor may be clearer than it seems."
 
@@ -106,7 +110,7 @@ With the parchment in hand, Frodo’s road was set before him. And so, under the
 2. Decrypt the message
 3. Figure out what to do with the message
 4. Implement
-5. Second breakfast (More pizza!)
+5. Second pizza
 
 
 # C3ProjectTemplate
